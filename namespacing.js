@@ -1,5 +1,5 @@
 /**
- * Created by testIMELNIKOV on 09.04.2014.
+ * Created by test IMELNIKOV on 09.04.2014.
  */
     // mynamespace is an object to use as a namespace
 mynamespace = (function() {
