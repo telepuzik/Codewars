@@ -6,7 +6,7 @@ function solution(roman){
     var arr = roman.split("");
     var sum =0, num = 0;
 
-    for (var i=0; i<arr.length; i++) {
+    for (var i=0; i<arr.length; i++)  {
         switch (arr[i]) {
             case "I":
                 num = 1;
