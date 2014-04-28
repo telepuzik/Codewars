@@ -65,5 +65,55 @@ function solution(roman){
     return sum;
 }
 
-console.log(solution('IX'));
-console.log(solution('MDCLXVI'));
+//console.log(solution('IX'));
+//console.log(solution('MDCLXVI'));
+
+
+function sumIntervals(intervals){
+    var res = [];
+    var arr = intervals.sort(function(a,b){return a[0]-b[0];});
+    var max = 0;
+    for (var i=0; i<arr.length; i++) {
+        if (arr[i][0] < max) {
+            if (arr[i][1] > max) {
+                res.push(arr[i][1] - max)
+            }
+        }
+        else {
+            res.push(arr[i][1] - arr[i][0]);
+        }
+        max = arr[i][1];
+    }
+    return res.reduce(function(a, b) {
+        return a + b;
+    });
+}
+
+console.log(sumIntervals( [
+    [1,2],
+    [6, 10],
+    [11, 15]
+] )); //=> returns 9
+
+console.log(sumIntervals( [
+    [1,4],
+    [7, 10],
+    [3, 5]
+] )); //=> returns 7
+
+console.log(sumIntervals( [
+    [1,5],
+    [10, 20],
+    [1, 6],
+    [16, 19],
+    [5, 11]
+] )); //=> returns 19
+
+
+//console.log(sumIntervals( [
+//    [1,5],
+//    [3, 6],
+//    [4, 8],
+//    [10, 12],
+//    [16, 19]
+//] ));
